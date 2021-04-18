@@ -1,1 +1,75 @@
+<!DOCTYPE html>
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;400&display=swap" rel="stylesheet">
+
+<html>
+
+<head>
+    <title>Pearly Teeth</title>
+</head>
+
+<style>
+    h1 {
+        text-align: center;
+        font-family: 'Lobster', cursive;
+        color: white;
+        font-size: 650%;
+        outline: invert;
+        text-shadow: 3px 3px rgba(71, 19, 19, 0.466);
+    }
+
+    p {
+        text-align: center;
+        color: grey;
+        font-family: oswald;
+        font-size: 160%;
+    }
+
+    body {
+        background-color: lightcoral;
+        background: url('pink_rice.png') repeat 0 0;
+    }
+
+    table,
+    th,
+    td {
+        border: 2px solid rgba(71, 19, 19, .466);
+        border-collapse: separate;
+        background: url('topography.png') repeat 0 0;;
+    }
+</style>
+
+<body>
+    <h1>Pearly Teeth</h1>
+    <table>
+        <tr>
+            <th>
+                <p>Write music using only your voice! First, grant access to your microphone
+                    and record a clip. Next, submit the clip to become a work of art!
+                <p>
+            </th>
+
+            <th><input type="file" accept="audio/*" capture id="recorder"></th>
+            <th><audio id="player" controls></audio></th>
+        </tr>
+
+    </table>
+
+    <script>
+        const recorder = document.getElementById('recorder');
+        const player = document.getElementById('player');
+
+        recorder.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            const url = URL.createObjectURL(file);
+            // Do something with the audio file.
+            player.src = url;
+        });
+    </script>
+
+
+</body>
+
+</html>
